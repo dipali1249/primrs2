@@ -24,7 +24,7 @@ concurrency:
 jobs:
   search:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 110
 
     steps:
       - name: Checkout repository
@@ -38,8 +38,8 @@ jobs:
       - name: Run sieve prime finder (5-minute session)
         run: python sieve_prime_finder.py
         env:
-          SESSION_SECONDS: '300'
-          SEGMENT_SIZE: '50000'
+          SESSION_SECONDS: '6000'
+          SEGMENT_SIZE: '500000000'
 
       - name: Commit updated state and report
         run: |
